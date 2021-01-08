@@ -1,12 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors')
 const mongoose = require("mongoose");
 
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 app.use(express.static("public"));
-
+app.use(cors());
 mongoose.connect('mongodb://localhost:27017/startUpHubDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const Post = mongoose.model('Post', {
@@ -26,13 +28,15 @@ app.route("/posts")
             }
         })
     }).post(function(req,res){
+        console.log(req.body);
         const newPost = new Post({
             tittle: req.body.tittle,
             content: req.body.content
           });
           newPost.save(function(err){
             if(!err){
-                console.log("Article Saved")
+                console.log("Article Saved");
+                console.log(newPost);
                 res.sendStatus(201)
             }else{
               res.sendStatus(500);
