@@ -18,8 +18,10 @@ app.route("/posts")
     .get(function(req,res){
         Post.find({}, function (err, docs) {
             if(!err){
+                console.log("Data fetched");
                 res.send(docs)
             } else {
+        
                 res.send(err)
             }
         })
@@ -30,7 +32,8 @@ app.route("/posts")
           });
           newPost.save(function(err){
             if(!err){
-              res.sendStatus(201)
+                console.log("Article Saved")
+                res.sendStatus(201)
             }else{
               res.sendStatus(500);
             }
