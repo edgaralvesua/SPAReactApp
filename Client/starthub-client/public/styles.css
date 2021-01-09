@@ -35,31 +35,31 @@
   footer p {
     color: #ccc;
   }
-  .note {
+  .post {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
     width: 240px;
     margin: 16px;
-    float: left;
+    left: 50%;
   }
-  .note h1 {
+  .post h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
   }
-  .note p {
+  .post p {
     font-size: 1.1em;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
   
-  .note button {
+  .post button {
     position: relative;
     float: right;
     margin-right: 10px;
-    color: #f5ba13;
+    color: #294273;
     border: none;
     width: 36px;
     height: 36px;
