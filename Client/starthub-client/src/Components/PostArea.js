@@ -8,6 +8,8 @@ function PostArea(){
 
     let URL = `http://localhost:3000/posts/` + queryState.page + '-' + queryState.numberOfPosts;
 
+    //https://www.pluralsight.com/guides/paginating-api-requests-in-react
+    //https://dev.to/arunabharjun/creating-infinitely-scrolling-spa-using-react-46hp
 
     function handleFetch() {
         console.log("Entered here")
